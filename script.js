@@ -117,7 +117,7 @@ const firstMaxAttempts = 3;
    ========================================================= */
 
 const correctPassword =
-    "RAKASTAN SINUA";
+    "RAKASTANSINUA";
 
 let attempts = 0;
 
