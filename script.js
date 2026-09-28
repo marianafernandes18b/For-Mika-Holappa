@@ -206,17 +206,22 @@ if (yesButton) {
         function () {
 
             if (notReadyMessage) {
+
                 notReadyMessage.textContent = "";
+
                 notReadyMessage.classList.remove(
                     "show"
                 );
+
             }
 
 
             if (confirmationBox) {
+
                 confirmationBox.classList.add(
                     "confirmed"
                 );
+
             }
 
 
@@ -268,7 +273,7 @@ if (firstPasswordForm) {
             const enteredFirstPassword =
                 firstPasswordInput.value
                     .trim()
-                    .replace(/\s+/g, " ")
+                    .replace(/\s+/g, "")
                     .toUpperCase();
 
 
@@ -337,6 +342,7 @@ if (firstPasswordForm) {
 
 
                 return;
+
             }
 
 
@@ -409,6 +415,7 @@ if (firstPasswordForm) {
 
 
                 return;
+
             }
 
 
@@ -421,7 +428,7 @@ if (firstPasswordForm) {
 
 
 /* =========================================================
-   SEGUNDA SENHA — RAKASTAN SINUA
+   SEGUNDA SENHA — RAKASTANSINUA
    ========================================================= */
 
 if (passwordForm) {
@@ -433,10 +440,15 @@ if (passwordForm) {
             event.preventDefault();
 
 
+            /*
+             * Remove todos os espaços digitados.
+             * A senha oficial continua sendo:
+             * RAKASTANSINUA
+             */
+
             const enteredPassword =
                 passwordInput.value
-                    .trim()
-                    .replace(/\s+/g, " ")
+                    .replace(/\s+/g, "")
                     .toUpperCase();
 
 
@@ -500,6 +512,7 @@ if (passwordForm) {
 
 
                 return;
+
             }
 
 
