@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Watch me first 🙈💕</title>
+    <title>Watch me first</title>
 
     <style>
 
@@ -29,14 +29,19 @@
 
             color: #f4efe5;
 
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
             display: flex;
             justify-content: center;
             align-items: center;
 
-            padding: 30px 20px;
+            padding: 40px 20px;
         }
 
-        .video-container {
+        .container {
             width: 100%;
             max-width: 1000px;
 
@@ -47,11 +52,6 @@
             margin: 0 0 28px;
 
             color: #f4efe5;
-
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
 
             font-size: clamp(2rem, 6vw, 3.5rem);
             font-weight: 400;
@@ -71,13 +71,157 @@
                 0 20px 60px rgba(0, 0, 0, 0.5);
         }
 
-        .video-line {
+        .gold-line {
             width: 70px;
             height: 1px;
 
-            margin: 28px auto 0;
+            margin: 32px auto;
 
             background: #d4af65;
+        }
+
+        .music-section {
+            margin-top: 20px;
+        }
+
+        .music-title {
+            margin: 0 0 10px;
+
+            color: #d4af65;
+
+            font-family: Arial, sans-serif;
+            font-size: 0.75rem;
+
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+        }
+
+        .music-text {
+            margin: 0 0 24px;
+
+            color: #b9b5ad;
+
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .qr-code {
+            display: block;
+
+            width: 220px;
+            max-width: 70vw;
+
+            height: auto;
+
+            margin: 0 auto;
+
+            background: #ffffff;
+
+            padding: 12px;
+
+            border-radius: 4px;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        .qr-caption {
+            margin: 18px 0 0;
+
+            color: #8f8b84;
+
+            font-family: Arial, sans-serif;
+            font-size: 0.75rem;
+
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .final-section {
+            margin-top: 100px;
+
+            padding-top: 60px;
+
+            border-top:
+                1px solid rgba(212, 175, 101, 0.25);
+        }
+
+        .final-text {
+            margin: 0 auto 28px;
+
+            max-width: 600px;
+
+            color: #b9b5ad;
+
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .reveal-button {
+            border: 1px solid #d4af65;
+
+            background: transparent;
+
+            color: #d4af65;
+
+            padding: 14px 28px;
+
+            font-family: Arial, sans-serif;
+            font-size: 0.75rem;
+
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+
+            cursor: pointer;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .reveal-button:hover {
+            background: #d4af65;
+            color: #05070d;
+
+            transform: translateY(-2px);
+        }
+
+        .site2 {
+            display: none;
+
+            margin-top: 40px;
+
+            opacity: 0;
+        }
+
+        .site2.show {
+            display: block;
+
+            animation: reveal 1s ease forwards;
+        }
+
+        .site2-title {
+            margin: 0 0 24px;
+
+            color: #f4efe5;
+
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        @keyframes reveal {
+
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
         }
 
     </style>
@@ -86,20 +230,117 @@
 
 <body>
 
-    <main class="video-container">
+    <main class="container">
 
         <h1>Watch me first</h1>
 
+        <!-- Introduction video -->
+
         <video controls playsinline preload="metadata">
-            <source src="video/introducao.mp4" type="video/mp4">
+
+            <source
+                src="video/introducao.mp4"
+                type="video/mp4"
+            >
+
             Seu navegador não suporta vídeo.
+
         </video>
 
-        <div class="video-line"></div>
+
+        <!-- Ed Sheeran QR -->
+
+        <section class="music-section">
+
+            <div class="gold-line"></div>
+
+            <p class="music-title">
+                Scan me
+            </p>
+
+            <p class="music-text">
+                Há mais uma coisa para você ouvir antes de continuar.
+            </p>
+
+            <img
+                class="qr-code"
+                src="qr/qr-ed-sheeran.png"
+                alt="QR Code para a música"
+            >
+
+            <p class="qr-caption">
+                Listen before you continue
+            </p>
+
+        </section>
+
+
+        <!-- Final Site 2 reveal -->
+
+        <section class="final-section">
+
+            <p class="final-text">
+                .
+                Mas ainda existe uma última coisa.
+            </p>
+
+            <button
+                class="reveal-button"
+                id="revealButton"
+                type="button"
+            >
+                Reveal it
+            </button>
+
+
+            <div
+                class="site2"
+                id="site2"
+            >
+
+                <p class="site2-title">
+                    Are you sure you want to continue?
+                </p>
+
+                <img
+                    class="qr-code"
+                    src="qr/qr-site-2.png"
+                    alt="QR Code para o Site 2"
+                >
+
+                <p class="qr-caption">
+                    The making-of starts here
+                </p>
+
+            </div>
+
+        </section>
 
     </main>
+
+
+    <script>
+
+        const revealButton =
+            document.getElementById("revealButton");
+
+        const site2 =
+            document.getElementById("site2");
+
+
+        revealButton.addEventListener(
+            "click",
+            function () {
+
+                site2.classList.add("show");
+
+                revealButton.style.display = "none";
+
+            }
+        );
+
+    </script>
 
 </body>
 
 </html>
-```
