@@ -161,34 +161,12 @@
             line-height: 1.8;
         }
 
-        /* Viimeinen vaihe */
+        /* Kirjeen vahvistus */
 
-        .final-section {
-            margin-top: 100px;
-
-            padding-top: 60px;
-
-            border-top:
-                1px solid rgba(212, 175, 101, 0.25);
-        }
-
-        .final-text {
-            margin: 0 auto 28px;
-
-            max-width: 600px;
-
-            color: #b9b5ad;
-
-            font-size: 1rem;
-            line-height: 1.8;
-        }
-
-        /* Salasana */
-
-        .password-box {
+        .confirmation-box {
             max-width: 500px;
 
-            margin: 40px auto 0;
+            margin: 35px auto 0;
 
             padding: 30px 20px;
 
@@ -196,7 +174,92 @@
                 1px solid rgba(212, 175, 101, 0.25);
         }
 
-        .password-title {
+        .confirmation-title {
+            margin: 0 0 24px;
+
+            color: #f4efe5;
+
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        .confirmation-buttons {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 14px;
+
+            flex-wrap: wrap;
+        }
+
+        .confirmation-button {
+            min-width: 120px;
+
+            border: 1px solid #d4af65;
+
+            background: transparent;
+
+            color: #d4af65;
+
+            padding: 14px 24px;
+
+            font-family: Arial, sans-serif;
+            font-size: 0.75rem;
+
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+
+            cursor: pointer;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .confirmation-button:hover {
+            background: #d4af65;
+
+            color: #05070d;
+
+            transform: translateY(-2px);
+        }
+
+        .confirmation-message {
+            min-height: 1.4em;
+
+            margin: 22px auto 0;
+
+            color: #b9b5ad;
+
+            font-size: 0.95rem;
+
+            line-height: 1.7;
+        }
+
+        /* Primeira senha */
+
+        .first-password-box {
+            display: none;
+
+            max-width: 500px;
+
+            margin: 35px auto 0;
+
+            padding: 30px 20px;
+
+            border:
+                1px solid rgba(212, 175, 101, 0.25);
+        }
+
+        .first-password-box.show {
+            display: block;
+
+            animation: reveal 1s ease forwards;
+        }
+
+        .first-password-title {
             margin: 0 0 20px;
 
             color: #f4efe5;
@@ -205,12 +268,15 @@
             font-weight: 400;
         }
 
-        .password-hint {
+        .first-password-text {
             margin: 0 auto 24px;
+
+            max-width: 400px;
 
             color: #8f8b84;
 
             font-size: 0.9rem;
+
             line-height: 1.7;
 
             font-style: italic;
@@ -283,6 +349,115 @@
             color: #05070d;
 
             transform: translateY(-2px);
+        }
+
+        .first-message-history {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
+
+            width: 100%;
+            max-width: 380px;
+
+            margin: 4px auto 0;
+
+            color: #b9b5ad;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 0.75rem;
+
+            letter-spacing: 0.05em;
+
+            line-height: 1.6;
+        }
+
+        .first-message-history p {
+            margin: 0;
+        }
+
+        .first-success-message {
+            min-height: 1.4em;
+
+            margin: 28px auto 0;
+
+            max-width: 520px;
+
+            color: #d4af65;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 1rem;
+
+            line-height: 1.7;
+        }
+
+        /* Viimeinen vaihe */
+
+        .final-section {
+            display: none;
+
+            margin-top: 100px;
+
+            padding-top: 60px;
+
+            border-top:
+                1px solid rgba(212, 175, 101, 0.25);
+        }
+
+        .final-section.show {
+            display: block;
+
+            animation: reveal 1s ease forwards;
+        }
+
+        .final-text {
+            margin: 0 auto 28px;
+
+            max-width: 600px;
+
+            color: #b9b5ad;
+
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Salasana */
+
+        .password-box {
+            max-width: 500px;
+
+            margin: 40px auto 0;
+
+            padding: 30px 20px;
+
+            border:
+                1px solid rgba(212, 175, 101, 0.25);
+        }
+
+        .password-title {
+            margin: 0 0 20px;
+
+            color: #f4efe5;
+
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        .password-hint {
+            margin: 0 auto 24px;
+
+            color: #8f8b84;
+
+            font-size: 0.9rem;
+            line-height: 1.7;
+
+            font-style: italic;
         }
 
         /* Yritysten historia */
@@ -392,8 +567,20 @@
                 padding: 28px 16px;
             }
 
+            .confirmation-box,
+            .first-password-box,
             .password-box {
                 padding: 26px 16px;
+            }
+
+            .confirmation-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .confirmation-button {
+                width: 100%;
+                max-width: 220px;
             }
 
             .qr-code {
@@ -470,12 +657,107 @@
                 Nyt on aika lukea kirje.
             </p>
 
+
+            <!-- Kirjeen vahvistus -->
+
+            <div class="confirmation-box">
+
+                <h2 class="confirmation-title">
+                    Oletko jo lukenut kirjeen?
+                </h2>
+
+                <div class="confirmation-buttons">
+
+                    <button
+                        class="confirmation-button"
+                        id="yesButton"
+                        type="button"
+                    >
+                        Kyllä
+                    </button>
+
+                    <button
+                        class="confirmation-button"
+                        id="noButton"
+                        type="button"
+                    >
+                        En
+                    </button>
+
+                </div>
+
+                <p
+                    class="confirmation-message"
+                    id="confirmationMessage"
+                    aria-live="polite"
+                ></p>
+
+            </div>
+
+
+            <!-- Ensimmäinen salasana -->
+
+            <div
+                class="first-password-box"
+                id="firstPasswordBox"
+            >
+
+                <h2 class="first-password-title">
+                    Ensimmäinen salaisuus
+                </h2>
+
+                <p class="first-password-text">
+                    Kirjeessä on jotain, mitä tarvitset tähän.
+                </p>
+
+                <form
+                    class="password-form"
+                    id="firstPasswordForm"
+                >
+
+                    <input
+                        class="password-input"
+                        id="firstPasswordInput"
+                        type="password"
+                        autocomplete="off"
+                        autocapitalize="characters"
+                        spellcheck="false"
+                        aria-label="Salasana"
+                        placeholder="Kirjoita salasana"
+                    >
+
+                    <button
+                        class="reveal-button"
+                        type="submit"
+                    >
+                        Avaa
+                    </button>
+
+                    <div
+                        class="first-message-history"
+                        id="firstMessageHistory"
+                        aria-live="polite"
+                    ></div>
+
+                </form>
+
+                <p
+                    class="first-success-message"
+                    id="firstSuccessMessage"
+                    aria-live="polite"
+                ></p>
+
+            </div>
+
         </section>
 
 
         <!-- Viimeinen vaihe -->
 
-        <section class="final-section">
+        <section
+            class="final-section"
+            id="finalSection"
+        >
 
             <p class="final-text">
                 Pääsit tänne asti.
@@ -579,3 +861,5 @@
 </body>
 
 </html>
+
+
