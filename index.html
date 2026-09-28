@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Watch me first</title>
+    <title>Katso tämä ensin</title>
 
     <style>
 
@@ -44,7 +44,6 @@
         .container {
             width: 100%;
             max-width: 1000px;
-
             text-align: center;
         }
 
@@ -97,7 +96,9 @@
         }
 
         .music-text {
-            margin: 0 0 24px;
+            margin: 0 auto 24px;
+
+            max-width: 600px;
 
             color: #b9b5ad;
 
@@ -134,8 +135,33 @@
             font-size: 0.75rem;
 
             letter-spacing: 0.18em;
+
             text-transform: uppercase;
         }
+
+        /* Kirje */
+
+        .letter-section {
+            margin-top: 70px;
+
+            padding-top: 50px;
+
+            border-top:
+                1px solid rgba(212, 175, 101, 0.25);
+        }
+
+        .letter-text {
+            margin: 0 auto;
+
+            max-width: 600px;
+
+            color: #b9b5ad;
+
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* Viimeinen vaihe */
 
         .final-section {
             margin-top: 100px;
@@ -155,6 +181,78 @@
 
             font-size: 1rem;
             line-height: 1.8;
+        }
+
+        /* Salasana */
+
+        .password-box {
+            max-width: 500px;
+
+            margin: 40px auto 0;
+
+            padding: 30px 20px;
+
+            border:
+                1px solid rgba(212, 175, 101, 0.25);
+        }
+
+        .password-title {
+            margin: 0 0 20px;
+
+            color: #f4efe5;
+
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        .password-hint {
+            margin: 0 auto 24px;
+
+            color: #8f8b84;
+
+            font-size: 0.9rem;
+            line-height: 1.7;
+
+            font-style: italic;
+        }
+
+        .password-form {
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 14px;
+        }
+
+        .password-input {
+            width: 100%;
+            max-width: 380px;
+
+            padding: 14px 16px;
+
+            border:
+                1px solid rgba(212, 175, 101, 0.45);
+
+            background: rgba(5, 7, 13, 0.7);
+
+            color: #f4efe5;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 1rem;
+
+            text-align: center;
+
+            outline: none;
+        }
+
+        .password-input:focus {
+            border-color: #d4af65;
         }
 
         .reveal-button {
@@ -187,10 +285,62 @@
             transform: translateY(-2px);
         }
 
+        /* Yritysten historia */
+
+        .message-history {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
+
+            width: 100%;
+            max-width: 380px;
+
+            margin: 4px auto 0;
+
+            color: #b9b5ad;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 0.75rem;
+
+            letter-spacing: 0.05em;
+
+            line-height: 1.6;
+        }
+
+        .message-history p {
+            margin: 0;
+        }
+
+        /* Onnistumisviesti */
+
+        .success-message {
+            min-height: 1.4em;
+
+            margin: 28px auto 0;
+
+            max-width: 520px;
+
+            color: #d4af65;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 1rem;
+
+            line-height: 1.7;
+        }
+
+        /* QR-koodi sivustolle 2 */
+
         .site2 {
             display: none;
 
-            margin-top: 40px;
+            margin-top: 45px;
 
             opacity: 0;
         }
@@ -210,6 +360,18 @@
             font-weight: 400;
         }
 
+        .site2-text {
+            margin: 0 auto 24px;
+
+            max-width: 520px;
+
+            color: #b9b5ad;
+
+            font-size: 0.95rem;
+
+            line-height: 1.7;
+        }
+
         @keyframes reveal {
 
             from {
@@ -224,6 +386,22 @@
 
         }
 
+        @media (max-width: 600px) {
+
+            body {
+                padding: 28px 16px;
+            }
+
+            .password-box {
+                padding: 26px 16px;
+            }
+
+            .qr-code {
+                width: 200px;
+            }
+
+        }
+
     </style>
 
 </head>
@@ -232,85 +410,162 @@
 
     <main class="container">
 
-        <h1>Watch me first</h1>
+        <!-- Otsikko -->
 
-        <!-- Introduction video -->
+        <h1>
+            Katso tämä ensin
+        </h1>
 
-        <video controls playsinline preload="metadata">
+
+        <!-- Esittelyvideo -->
+
+        <video
+            controls
+            playsinline
+            preload="metadata"
+        >
 
             <source
                 src="video/introducao.mp4"
                 type="video/mp4"
             >
 
-            Seu navegador não suporta vídeo.
+            Selaimesi ei tue videon toistamista.
 
         </video>
 
 
-        <!-- Ed Sheeran QR -->
+        <!-- Ed Sheeranin QR-koodi -->
 
         <section class="music-section">
 
             <div class="gold-line"></div>
 
             <p class="music-title">
-                Scan me
+                Skannaa minut
             </p>
 
             <p class="music-text">
-                Há mais uma coisa para você ouvir antes de continuar.
+                Ennen kuin jatkat, on vielä yksi asia, joka sinun täytyy kuunnella.
             </p>
 
             <img
                 class="qr-code"
                 src="qr/qr-ed-sheeran.png"
-                alt="QR Code para a música"
+                alt="QR-koodi Ed Sheeranin kappaletta varten"
             >
 
             <p class="qr-caption">
-                Listen before you continue
+                Kuuntele ennen kuin jatkat
             </p>
 
         </section>
 
 
-        <!-- Final Site 2 reveal -->
+        <!-- Ohje kirjeen lukemiseen -->
+
+        <section class="letter-section">
+
+            <p class="letter-text">
+                Nyt on aika lukea kirje.
+            </p>
+
+        </section>
+
+
+        <!-- Viimeinen vaihe -->
 
         <section class="final-section">
 
             <p class="final-text">
-                .
-                Mas ainda existe uma última coisa.
+                Pääsit tänne asti.
+                Mutta vielä on yksi viimeinen asia.
             </p>
 
-            <button
-                class="reveal-button"
-                id="revealButton"
-                type="button"
-            >
-                Reveal it
-            </button>
 
+            <!-- Salasana -->
 
-            <div
-                class="site2"
-                id="site2"
-            >
+            <div class="password-box">
 
-                <p class="site2-title">
-                    Are you sure you want to continue?
+                <h2 class="password-title">
+                    Viimeinen salaisuus
+                </h2>
+
+                <p class="password-hint">
+                    Vihje: Salasana on lause, joka toistuu useissa kohdissa kirjeessä.
                 </p>
 
-                <img
-                    class="qr-code"
-                    src="qr/qr-site-2.png"
-                    alt="QR Code para o Site 2"
+
+                <form
+                    class="password-form"
+                    id="passwordForm"
                 >
 
-                <p class="qr-caption">
-                    The making-of starts here
-                </p>
+                    <input
+                        class="password-input"
+                        id="passwordInput"
+                        type="password"
+                        autocomplete="off"
+                        autocapitalize="characters"
+                        spellcheck="false"
+                        aria-label="Salasana"
+                        placeholder="Kirjoita salasana"
+                    >
+
+                    <button
+                        class="reveal-button"
+                        type="submit"
+                    >
+                        Avaa
+                    </button>
+
+
+                    <!-- Yritysten historia -->
+
+                    <div
+                        class="message-history"
+                        id="messageHistory"
+                        aria-live="polite"
+                    ></div>
+
+                </form>
+
+
+                <!-- Onnistumisviesti -->
+
+                <p
+                    class="success-message"
+                    id="successMessage"
+                    aria-live="polite"
+                ></p>
+
+
+                <!-- QR-koodi sivustolle 2 -->
+
+                <div
+                    class="site2"
+                    id="site2"
+                >
+
+                    <p class="site2-title">
+                        Pääsit sisään.
+                    </p>
+
+                    <p class="site2-text">
+                        Tästä alkaa kaikki, mitä et vielä nähnyt.
+                    </p>
+
+                    <img
+                        class="qr-code"
+                        src="qr/qr-site-2.png"
+                        alt="QR-koodi sivustolle 2"
+                    >
+
+                    <p class="qr-caption">
+                        Tästä alkaa kaikki, mitä et vielä nähnyt
+                    </p>
+
+                </div>
 
             </div>
 
@@ -319,27 +574,7 @@
     </main>
 
 
-    <script>
-
-        const revealButton =
-            document.getElementById("revealButton");
-
-        const site2 =
-            document.getElementById("site2");
-
-
-        revealButton.addEventListener(
-            "click",
-            function () {
-
-                site2.classList.add("show");
-
-                revealButton.style.display = "none";
-
-            }
-        );
-
-    </script>
+    <script src="script.js"></script>
 
 </body>
 
