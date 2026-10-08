@@ -59,17 +59,14 @@
         }
 
         video {
-            display: block;
-
-            width: 100%;
-            height: auto;
-
-            border-radius: 4px;
-
-            box-shadow:
-                0 20px 60px rgba(0, 0, 0, 0.5);
-        }
-
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 6px;
+}
+        
         .gold-line {
             width: 70px;
             height: 1px;
@@ -608,10 +605,11 @@
         <!-- Esittelyvideo -->
 
         <video
-            controls
-            playsinline
-            preload="metadata"
-        >
+    controls
+    playsinline
+    preload="metadata"
+    style="display: block; width: 100%; max-width: 500px; height: auto; margin: 0 auto;"
+>
 
             <source
                 src="Vídeo/videointroducao.mp4.mp4"
